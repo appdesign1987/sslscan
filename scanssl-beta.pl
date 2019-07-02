@@ -57,12 +57,13 @@ foreach(@ips){
 
     chmod 0644,$jsonfilename;
     
-    my ($host, $grade, $ipAddress, $notafter, $date_class);
+    my ($host, $grade, $ipAddress, $serverName, $notafter, $date_class);
 
     if ( $decoded->[0]{endpoints}[0]{grade} ){
 	$date_class = "good";
 	$host = $decoded->[0]{host};
-	$ipAddress = $decoded->[0]{ipAddress};
+	$ipAddress = $decoded->[1]{ipAddress};
+	$serverName = $decoded->[2]{serverName};
 	$grade = $decoded->[0]{endpoints}[0]{grade};
 	my $timestampDateTime = DateTime->from_epoch( epoch => str2time ( $timestamp ));
 	my $notafterDateTime = DateTime->from_epoch( epoch => $decoded->[0]{certs}[0]{notAfter}/1000);
@@ -77,7 +78,6 @@ foreach(@ips){
     } else {
 	$host = $_;
 	$grade = "Error";
-	$ipAddress = "";
 	$notafter = "Error";
 	$date_class = "ugly";
     }
@@ -97,6 +97,7 @@ foreach(@ips){
 	<td><a href="$jsonfilename">$host</a></td>
 	<td><span class="$class">$grade</span></td>
 	<td><span class="ClassIP">$ipAddress</span></td>
+	<td><span class="ClassIP">$serverName</span></td>
 	<td><span class="$date_class">$notafter</span></td>
     </tr>
 END
