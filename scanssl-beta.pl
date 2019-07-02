@@ -37,7 +37,7 @@ my $html_top = << "END";
     <body>
       <table>
          <tr>
-           <th>Hostname</th><th>TLS grade</th><th>Expiration date</th>
+           <th>Hostname</th><th>TLS grade</th><th>IP ADRES</th><th>ServerName</th><th>Expiration date</th>
 END
 
 print $fh $html_top;
