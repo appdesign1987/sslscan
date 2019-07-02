@@ -62,6 +62,7 @@ foreach(@ips){
     if ( $decoded->[0]{endpoints}[0]{grade} ){
 	$date_class = "good";
 	$host = $decoded->[0]{host};
+	$ipAddress = $decoded->[0]{ipAddress};
 	$grade = $decoded->[0]{endpoints}[0]{grade};
 	my $timestampDateTime = DateTime->from_epoch( epoch => str2time ( $timestamp ));
 	my $notafterDateTime = DateTime->from_epoch( epoch => $decoded->[0]{certs}[0]{notAfter}/1000);
@@ -76,7 +77,7 @@ foreach(@ips){
     } else {
 	$host = $_;
 	$grade = "Error";
-	$ipAddress = $_;
+	$ipAddress = "";
 	$notafter = "Error";
 	$date_class = "ugly";
     }
