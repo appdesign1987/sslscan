@@ -77,8 +77,8 @@ foreach(@ips){
 	}
     } else {
 	$host = $_;
-	$ipAddress = $_;
-	$serverName = $_;
+	$ipAddress = $decoded->[0]{endpoints}[0]{ipAddress};
+	$serverName = $decoded->[0]{endpoints}[0]{serverName};
 	$grade = "Error";
 	$notafter = "Error";
 	$date_class = "ugly";
