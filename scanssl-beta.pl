@@ -78,7 +78,7 @@ foreach(@ips){
     } else {
 	$host = $_;
 	$ipAddress = $_;
-	$serverName $_;
+	$serverName = $_;
 	$grade = "Error";
 	$notafter = "Error";
 	$date_class = "ugly";
