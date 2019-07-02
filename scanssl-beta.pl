@@ -95,7 +95,7 @@ foreach(@ips){
     <tr>
 	<td><a href="$jsonfilename">$host</a></td>
 	<td><span class="$class">$grade</span></td>
-	<td><span class="$classIP">$ipAddress</span></td>
+	<td><span class="$ClassIP">$ipAddress</span></td>
 	<td><span class="$date_class">$notafter</span></td>
     </tr>
 END
