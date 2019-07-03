@@ -80,7 +80,7 @@ foreach(@ips){
 	$ipAddress = $decoded->[0]{endpoints}[0]{ipAddress};
 	$serverName = $decoded->[0]{endpoints}[0]{serverName};
 	$grade = "Error";
-	$notafter = "Error";
+	$notafter = "No date";
 	$date_class = "ugly";
     }
     my $class;
