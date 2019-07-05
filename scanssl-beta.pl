@@ -8,7 +8,7 @@ my $start_run = time();
 my $timestamp = localtime(time);
 # You need to add your own servers in hosts.txt file
 my @ips; 
-my $hosts_filename = '"*.txt'";
+my $hosts_filename = 'hosts.txt';
 
 open(my $fh, '<:encoding(UTF-8)', $hosts_filename)
     or die "Could not open file '$hosts_filename' $!";
